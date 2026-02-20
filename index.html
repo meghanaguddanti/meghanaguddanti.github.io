@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="-1">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Meghana Guddanti | Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/master.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body id="top">
+
+  <nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">MG</a>
+
+    <div class="nav-links">
+      <a href="#portfolio">Portfolio</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+  
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+
+      <div class="hero-main">
+        <img class="avatar" src="images/profile.jpg" alt="Meghana Guddanti">
+
+        <div class="hero-text">
+          <h1>Meghana Guddanti</h1>
+
+          <!-- Title switches by mode -->
+          <p class="role mode-text" data-mode="fullstack">Software Development Engineer | Backend & Systems Focused</p>
+          <p class="role mode-text hidden" data-mode="cloud">Cloud Engineer | Infrastructure, Automation & Reliability</p>
+
+          <!-- MODE TOGGLE -->
+          <div class="mode-toggle" role="group" aria-label="Profile mode toggle">
+            <button class="mode-btn active" data-mode="fullstack" type="button">
+              <i class="fa-solid fa-code"></i> Full Stack Mode
+            </button>
+            <button class="mode-btn" data-mode="cloud" type="button">
+              <i class="fa-solid fa-cloud"></i> Cloud Engineer Mode
+            </button>
+          </div>
+
+          <!-- Intro switches by mode -->
+          <p class="intro mode-text" data-mode="fullstack">
+            I’m a Software Development Engineer with experience building scalable backend systems, automating workflows using Python, and optimizing distributed environments for reliability and performance. I focus on designing efficient, secure, and production-ready applications with strong fundamentals in data structures, APIs, system troubleshooting, and enterprise-level infrastructure. I’ve implemented data-driven solutions that reduced system failures by 90% and improved operational efficiency through root cause analysis and intelligent automation. Passionate about writing clean, maintainable code and building systems that scale.
+          </p>
+          <p class="intro mode-text hidden" data-mode="cloud">
+            I’m a Cloud Engineer with experience designing and supporting scalable, secure enterprise infrastructure in hybrid environments. I specialize in automation using Python, identity and access management with Active Directory, endpoint provisioning (SCCM/MDT), and Microsoft 365 ecosystems. I’ve built predictive monitoring solutions that reduced infrastructure downtime by 90% and improved operational stability through data-driven troubleshooting.I focus on building resilient, secure, and high-availability systems by combining infrastructure engineering, automation, and cloud-oriented architectures.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn primary" href="#portfolio">
+              <i class="fa-solid fa-folder-open"></i> View Projects
+            </a>
+
+            <!-- Resume in root folder (same level as index.html) -->
+            <a class="btn" href="meghanaguddanti_resume.pdf" download>
+              <i class="fa-solid fa-file-arrow-down"></i> Resume
+            </a>
+          </div>
+
+          <div class="hero-icons">
+            <a class="icon-link" href="mailto:g.meghanaa31@gmail.com" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a class="icon-link" href="https://github.com/Meghanaaa2002" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a class="icon-link" href="https://linkedin.com/in/meghana-guddanti" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+
+          <!-- Tech badges switch by mode -->
+          <div class="tech-stack mode-block" data-mode="fullstack">
+            <span>Java</span>
+            <span>Spring Boot</span>
+            <span>React</span>
+            <span>REST APIs</span>
+            <span>SQL</span>
+            <span>Auth/JWT</span>
+          </div>
+
+          <div class="tech-stack mode-block hidden" data-mode="cloud">
+            <span>AWS</span>
+            <span>Azure</span>
+            <span>Lambda</span>
+            <span>S3</span>
+            <span>IAM</span>
+            <span>CI/CD</span>
+          </div>
+
+          <!-- Quick Highlights (new) -->
+          <div class="quick-highlights">
+            <div class="mini-card">
+              <span class="mini-top">Focus</span>
+              <p>Secure APIs · Scalable Systems</p>
+            </div>
+            <div class="mini-card">
+              <span class="mini-top">Cloud</span>
+              <p>AWS/Azure · Serverless · CI/CD</p>
+            </div>
+            <div class="mini-card">
+              <span class="mini-top">Strength</span>
+              <p>Backend + Full Stack Delivery</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Creative floating card switches by mode -->
+      <div class="highlight-card reveal">
+        <h4 class="mode-text" data-mode="fullstack">Currently Building</h4>
+        <h4 class="mode-text hidden" data-mode="cloud">Currently Focusing On</h4>
+
+        <p class="mode-text" data-mode="fullstack">
+          Building scalable, secure, and intelligent systems powered by automation and data-driven engineering.
+        </p>
+        <p class="mode-text hidden" data-mode="cloud">
+          Designing secure, scalable systems powered by automation and cloud-first principles.
+        </p>
+
+        <div class="highlight-line"></div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section">
+    <div class="section-head">
+      <h2>Portfolio</h2>
+      <p>Selected projects showing full-stack, cloud, and ML work.</p>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project-card accent-pink reveal">
+        <img class="project-img" src="images/projects/grocery.jpg" alt="Grocery Store Management System">
+        <div class="project-body">
+          <h3>Grocery Store Management System</h3>
+          <p class="meta">Flask · React · Oracle SQL · JWT · AWS EC2</p>
+          <p>
+            Full-stack inventory, orders, and user management system with role-based access control
+            and secure REST APIs.
+          </p>
+          <div class="actions">
+            <a class="btn small" href="https://github.com/Meghanaaa2002" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card accent-blue reveal">
+        <img class="project-img" src="images/projects/asl.jpg" alt="Sign Language Recognition System">
+        <div class="project-body">
+          <h3>Sign Language Recognition System</h3>
+          <p class="meta">CNN · Flask · OpenCV</p>
+          <p>
+            Real-time ASL gesture recognition using CNNs, achieving 92% accuracy and improving accessibility.
+          </p>
+          <div class="actions">
+            <a class="btn small" href="https://github.com/Meghanaaa2002" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card accent-green reveal">
+        <img class="project-img" src="images/projects/plant.jpg" alt="Plant Disease Detection System">
+        <div class="project-body">
+          <h3>Plant Disease Detection System</h3>
+          <p class="meta">CNN · Flask · AWS S3 · Lambda</p>
+          <p>
+            Leaf disease detection with 94% validation accuracy and a serverless inference workflow.
+          </p>
+          <div class="actions">
+            <a class="btn small" href="https://github.com/Meghanaaa2002" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section alt">
+    <div class="section-head">
+      <h2>Skill Summary</h2>
+      <p>Switch modes to highlight the most relevant skills.</p>
+    </div>
+
+    <ul class="chips mode-block reveal" data-mode="fullstack">
+      <li class="chip pink">Java</li>
+      <li class="chip indigo">Spring Boot</li>
+      <li class="chip cyan">React</li>
+      <li class="chip purple">JavaScript</li>
+      <li class="chip gray">REST APIs</li>
+      <li class="chip gray">SQL</li>
+      <li class="chip orange">Postman</li>
+      <li class="chip orange">JUnit</li>
+    </ul>
+
+    <ul class="chips mode-block hidden reveal" data-mode="cloud">
+      <li class="chip teal">AWS (EC2, S3, Lambda, IAM)</li>
+      <li class="chip sky">Azure</li>
+      <li class="chip green">Docker</li>
+      <li class="chip green">Kubernetes</li>
+      <li class="chip indigo">CI/CD</li>
+      <li class="chip gray">Jenkins</li>
+      <li class="chip gray">Monitoring</li>
+      <li class="chip gray">Security (IAM)</li>
+    </ul>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <p>Impact-focused highlights.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="card reveal">
+        <h3>Graduate Assistant — Graduate School</h3>
+        <p class="meta">University of Cincinnati · Dec 2024 – Aug 2025</p>
+        <ul class="bullets">
+          <li>Engineered and supported enterprise IT infrastructure for the Provost Office and Graduate College, managing Windows/macOS environments, Active Directory, Windows Server, SCCM imaging, and Microsoft 365.</li>
+          <li>Deployed secure Windows images and provisioned endpoints at scale; troubleshot distributed systems across Teams, Zoom, networking (TCP/IP), and hybrid collaboration platforms.</li>
+          <li>Reduced recurring ServiceNow incidents by 30% through root cause analysis and built a Python-based predictive asset management model that decreased hardware failures by 90%.</li>
+          <li>Managed user authentication, server configuration, data backup, and endpoint security to strengthen infrastructure reliability and compliance.</li>
+        </ul>
+      </div>
+
+      <div class="card reveal">
+        <h3>Software Developer Intern</h3>
+        <p class="meta">Aloft Technologies LLC · Dec 2025 – Present</p>
+        <ul class="bullets">
+          <li>Contributing to software development initiatives in support of IT consulting services and organizational goals.</li>
+          <li>Assisting in the design, development, and maintenance of applications under the guidance of senior developers.</li>
+          <li>Collaborating with cross-functional teams to understand requirements and implement technical solutions.</li>
+          <li>Writing, testing, and debugging code to improve system functionality and performance.</li>
+          <li>Gaining hands-on experience with real-world development workflows in a professional remote environment.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section alt">
+    <div class="section-head">
+      <h2>Education</h2>
+      <p>Academic background.</p>
+    </div>
+
+    <div class="edu-timeline">
+      <div class="edu-item accent-blue reveal">
+        <div class="edu-logo">
+          <img src="images/universities/uc.png" alt="University of Cincinnati Logo">
+        </div>
+        <div class="edu-card">
+          <div class="edu-top">
+            <h3>University of Cincinnati</h3>
+            <span class="badge badge-blue">Expected 2026</span>
+          </div>
+          <p class="edu-meta">Master of Engineering, Computer Science · Aug 2024 – Apr 2026</p>
+        </div>
+      </div>
+
+      <div class="edu-item accent-pink reveal">
+        <div class="edu-logo">
+          <img src="images/universities/jntu.png" alt="JNTU Logo">
+        </div>
+        <div class="edu-card">
+          <div class="edu-top">
+            <h3>Jawaharlal Nehru Technological University</h3>
+            <span class="badge badge-pink">Graduated</span>
+          </div>
+          <p class="edu-meta">Bachelor of Technology, Computer Science Engineering · Dec 2020 – Jun 2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-head">
+      <h2>Contact</h2>
+      <p>Let’s connect.</p>
+    </div>
+
+    <div class="card contact reveal">
+      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:g.meghanaa31@gmail.com">g.meghanaa31@gmail.com</a></p>
+      <p><i class="fa-brands fa-github"></i> <a href="https://github.com/Meghanaaa2002" target="_blank" rel="noopener noreferrer">github.com/Meghanaaa2002</a></p>
+      <p><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/meghana-guddanti" target="_blank" rel="noopener noreferrer">linkedin.com/in/meghana-guddanti</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Meghana Guddanti</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
