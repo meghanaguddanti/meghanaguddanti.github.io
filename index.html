@@ -1,328 +1,820 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="-1">
-  <meta http-equiv="Cache-Control" content="no-cache">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meghana Guddanti | Software Development Engineer</title>
+<meta name="description" content="Meghana Guddanti — Software Development Engineer specializing in backend systems, cloud infrastructure, and ML engineering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <title>Meghana Guddanti | Portfolio</title>
+  :root {
+    --ink: #0d0d0d;
+    --ink-muted: #5a5a5a;
+    --ink-faint: #9a9a9a;
+    --surface: #fafaf8;
+    --surface-2: #f2f0eb;
+    --border: rgba(0,0,0,0.08);
+    --accent: #1a3a2a;
+    --accent-2: #c8a96e;
+    --accent-light: #e8f0ec;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="./css/master.css">
+  html { scroll-behavior: smooth; }
 
-  <!-- Icons -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  body {
+    font-family: var(--sans);
+    background: var(--surface);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 3rem;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--ink-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 72px;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem 5rem 3rem;
+    background: var(--accent);
+    color: white;
+  }
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-bottom: 1.5rem;
+  }
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    color: #f5f0e8;
+  }
+  .hero-title {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 3rem; }
+  .chip {
+    padding: 0.3rem 0.85rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    padding: 0.75rem 1.75rem;
+    background: var(--accent-2);
+    color: var(--accent);
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s, transform 0.15s;
+    letter-spacing: 0.02em;
+    font-family: var(--sans);
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn-outline {
+    padding: 0.75rem 1.75rem;
+    background: transparent;
+    color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, border-color 0.2s;
+    letter-spacing: 0.02em;
+    font-family: var(--sans);
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.5); }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 3rem 5rem 4rem;
+    background: var(--surface-2);
+  }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+  .stat-card {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .hero-tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--accent-2);
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 3rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 80px;
+  }
+  .section-heading {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 3.5rem;
+    color: var(--ink);
+  }
+
+  /* PROJECTS */
+  #projects { background: white; }
+  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .project-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    background: var(--surface);
+  }
+  .project-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(26,58,42,0.1); }
+  .project-thumb {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thumb-grocery { background: linear-gradient(135deg, #e8f0ec 0%, #c8ddd1 100%); }
+  .thumb-asl     { background: linear-gradient(135deg, #f0ece8 0%, #ddd1c4 100%); }
+  .thumb-plant   { background: linear-gradient(135deg, #eaf0e4 0%, #c8ddb8 100%); }
+  .project-icon { font-size: 2.8rem; }
+  .project-body { padding: 1.5rem; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.8rem; }
+  .project-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    background: var(--accent-light);
+    color: var(--accent);
+    letter-spacing: 0.03em;
+  }
+  .project-name {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .project-desc {
+    font-size: 0.83rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .project-link {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: gap 0.2s;
+  }
+  .project-link:hover { gap: 0.7rem; }
+
+  /* SKILLS */
+  #skills { background: var(--surface-2); }
+  .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .skill-group-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--accent);
+  }
+  .skill-list { list-style: none; }
+  .skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .skill-name { font-size: 0.88rem; font-weight: 500; color: var(--ink); }
+  .skill-bar-track {
+    width: 100px;
+    height: 4px;
+    background: rgba(0,0,0,0.08);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .skill-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    width: 0;
+    transition: width 1s ease;
+  }
+
+  /* EXPERIENCE */
+  #experience { background: white; }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    margin-bottom: 3.5rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .exp-period {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent-2);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .exp-org {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+  .exp-role {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--ink);
+  }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.65rem;
+    font-size: 0.87rem;
+    color: var(--ink-muted);
+    line-height: 1.75;
+  }
+  .exp-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent-2);
+    font-weight: 600;
+  }
+  .highlight-stat {
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  /* EDUCATION */
+  #education { background: var(--surface-2); }
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .edu-card {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .edu-badge {
+    width: 48px; height: 48px;
+    border-radius: 8px;
+    background: var(--accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  .edu-degree {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+  .edu-school {
+    font-size: 0.83rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  .edu-period {
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+  }
+
+  /* CONTACT */
+  #contact { background: var(--accent); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .contact-heading {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.02em;
+    color: #f5f0e8;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .contact-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    text-decoration: none;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.88rem;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    background: rgba(255,255,255,0.04);
+    font-family: var(--sans);
+  }
+  .contact-link:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.3);
+    transform: translateX(4px);
+  }
+  .contact-icon {
+    font-size: 1rem;
+    width: 24px;
+    text-align: center;
+    color: var(--accent-2);
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 4rem 1.5rem 3rem; }
+    .hero-right { padding: 3rem 1.5rem 4rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    section { padding: 4rem 1.5rem; }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  }
+</style>
 </head>
+<body>
 
-<body id="top">
-
-  <nav class="nav">
-  <div class="nav-inner">
-    <a class="brand" href="#top">MG</a>
-
-    <div class="nav-links">
-      <a href="#portfolio">Portfolio</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
+<!-- NAVIGATION -->
+<nav>
+  <a href="#top" class="nav-logo">MG</a>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-  
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-inner">
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Software Development Engineer</div>
+    <h1 class="hero-name">Meghana<br>Guddanti</h1>
+    <p class="hero-title">
+      Backend &amp; Systems &nbsp;·&nbsp; Cloud Infrastructure<br>
+      ML Engineering &nbsp;·&nbsp; Full Stack Development
+    </p>
+    <div class="hero-chips">
+      <span class="chip">Java · Spring Boot</span>
+      <span class="chip">AWS · Azure</span>
+      <span class="chip">Python</span>
+      <span class="chip">React</span>
+      <span class="chip">REST APIs</span>
+      <span class="chip">Docker · Kubernetes</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="meghanaguddanti_resume.pdf" target="_blank" class="btn-outline">Download Resume</a>
+    </div>
+  </div>
 
-      <div class="hero-main">
-        <img class="avatar" src="images/profile.jpg" alt="Meghana Guddanti">
+  <div class="hero-right">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">90%</div>
+        <div class="stat-label">Reduction in system failures</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">94%</div>
+        <div class="stat-label">ML model accuracy achieved</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">30%</div>
+        <div class="stat-label">Fewer support incidents</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Production-deployed projects</div>
+      </div>
+    </div>
+    <p class="hero-tagline">Building scalable, secure, and intelligent systems — where backend precision meets cloud-first engineering.</p>
+  </div>
+</div>
 
-        <div class="hero-text">
-          <h1>Meghana Guddanti</h1>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label">Selected work</div>
+    <h2 class="section-heading">Projects</h2>
+    <div class="projects-grid">
 
-          <!-- Title switches by mode -->
-          <p class="role mode-text" data-mode="fullstack">Software Development Engineer | Backend & Systems Focused</p>
-          <p class="role mode-text hidden" data-mode="cloud">Cloud Engineer | Infrastructure, Automation & Reliability</p>
-
-          <!-- MODE TOGGLE -->
-          <div class="mode-toggle" role="group" aria-label="Profile mode toggle">
-            <button class="mode-btn active" data-mode="fullstack" type="button">
-              <i class="fa-solid fa-code"></i> Full Stack Mode
-            </button>
-            <button class="mode-btn" data-mode="cloud" type="button">
-              <i class="fa-solid fa-cloud"></i> Cloud Engineer Mode
-            </button>
+      <div class="project-card reveal">
+        <div class="project-thumb thumb-grocery">
+          <div class="project-icon">🛒</div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Flask</span>
+            <span class="project-tag">React</span>
+            <span class="project-tag">Oracle SQL</span>
+            <span class="project-tag">JWT</span>
+            <span class="project-tag">AWS EC2</span>
           </div>
-
-          <!-- Intro switches by mode -->
-          <p class="intro mode-text" data-mode="fullstack">
-            I’m a Software Development Engineer with experience building scalable backend systems, automating workflows using Python, and optimizing distributed environments for reliability and performance. I focus on designing efficient, secure, and production-ready applications with strong fundamentals in data structures, APIs, system troubleshooting, and enterprise-level infrastructure. I’ve implemented data-driven solutions that reduced system failures by 90% and improved operational efficiency through root cause analysis and intelligent automation. Passionate about writing clean, maintainable code and building systems that scale.
-          </p>
-          <p class="intro mode-text hidden" data-mode="cloud">
-            I’m a Cloud Engineer with experience designing and supporting scalable, secure enterprise infrastructure in hybrid environments. I specialize in automation using Python, identity and access management with Active Directory, endpoint provisioning (SCCM/MDT), and Microsoft 365 ecosystems. I’ve built predictive monitoring solutions that reduced infrastructure downtime by 90% and improved operational stability through data-driven troubleshooting.I focus on building resilient, secure, and high-availability systems by combining infrastructure engineering, automation, and cloud-oriented architectures.
-          </p>
-
-          <div class="hero-cta">
-            <a class="btn primary" href="#portfolio">
-              <i class="fa-solid fa-folder-open"></i> View Projects
-            </a>
-
-            <!-- Resume in root folder (same level as index.html) -->
-            <a class="btn" href="meghanaguddanti_resume.pdf" download>
-              <i class="fa-solid fa-file-arrow-down"></i> Resume
-            </a>
-          </div>
-
-          <div class="hero-icons">
-            <a class="icon-link" href="mailto:g.meghanaa31@gmail.com" aria-label="Email">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-            <a class="icon-link" href="https://github.com/meghanaguddanti" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a class="icon-link" href="https://linkedin.com/in/meghana-guddanti" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </div>
-
-          <!-- Tech badges switch by mode -->
-          <div class="tech-stack mode-block" data-mode="fullstack">
-            <span>Java</span>
-            <span>Spring Boot</span>
-            <span>React</span>
-            <span>REST APIs</span>
-            <span>SQL</span>
-            <span>Auth/JWT</span>
-          </div>
-
-          <div class="tech-stack mode-block hidden" data-mode="cloud">
-            <span>AWS</span>
-            <span>Azure</span>
-            <span>Lambda</span>
-            <span>S3</span>
-            <span>IAM</span>
-            <span>CI/CD</span>
-          </div>
-
-          <!-- Quick Highlights (new) -->
-          <div class="quick-highlights">
-            <div class="mini-card">
-              <span class="mini-top">Focus</span>
-              <p>Secure APIs · Scalable Systems</p>
-            </div>
-            <div class="mini-card">
-              <span class="mini-top">Cloud</span>
-              <p>AWS/Azure · Serverless · CI/CD</p>
-            </div>
-            <div class="mini-card">
-              <span class="mini-top">Strength</span>
-              <p>Backend + Full Stack Delivery</p>
-            </div>
-          </div>
-
+          <div class="project-name">Grocery Store Management System</div>
+          <p class="project-desc">Full-stack inventory, orders, and user management with role-based access control and secure REST APIs deployed on AWS EC2.</p>
+          <a href="https://github.com/Meghanaaa2002" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
         </div>
       </div>
 
-      <!-- Creative floating card switches by mode -->
-      <div class="highlight-card reveal">
-        <h4 class="mode-text" data-mode="fullstack">Currently Building</h4>
-        <h4 class="mode-text hidden" data-mode="cloud">Currently Focusing On</h4>
+      <div class="project-card reveal">
+        <div class="project-thumb thumb-asl">
+          <div class="project-icon">🤟</div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">CNN</span>
+            <span class="project-tag">Flask</span>
+            <span class="project-tag">OpenCV</span>
+          </div>
+          <div class="project-name">Sign Language Recognition System</div>
+          <p class="project-desc">Real-time ASL gesture recognition using CNNs with <span class="highlight-stat">92% accuracy</span>, improving accessibility for hearing-impaired users.</p>
+          <a href="https://github.com/Meghanaaa2002" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </div>
+      </div>
 
-        <p class="mode-text" data-mode="fullstack">
-          Building scalable, secure, and intelligent systems powered by automation and data-driven engineering.
-        </p>
-        <p class="mode-text hidden" data-mode="cloud">
-          Designing secure, scalable systems powered by automation and cloud-first principles.
-        </p>
-
-        <div class="highlight-line"></div>
+      <div class="project-card reveal">
+        <div class="project-thumb thumb-plant">
+          <div class="project-icon">🌿</div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">CNN</span>
+            <span class="project-tag">Flask</span>
+            <span class="project-tag">AWS S3</span>
+            <span class="project-tag">Lambda</span>
+          </div>
+          <div class="project-name">Plant Disease Detection System</div>
+          <p class="project-desc">Leaf disease detection with <span class="highlight-stat">94% validation accuracy</span> and serverless inference via AWS Lambda and S3.</p>
+          <a href="https://github.com/Meghanaaa2002" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </div>
       </div>
 
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class="section">
-    <div class="section-head">
-      <h2>Portfolio</h2>
-      <p>Selected projects showing full-stack, cloud, and ML work.</p>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">Technical expertise</div>
+    <h2 class="section-heading">Skills</h2>
+    <div class="skills-layout">
+
+      <div>
+        <div class="skill-group-label">Backend &amp; Languages</div>
+        <ul class="skill-list">
+          <li class="skill-item">
+            <span class="skill-name">Java &amp; Spring Boot</span>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-name">Python</span>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-name">REST APIs &amp; JWT</span>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-name">SQL &amp; Oracle</span>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-name">React &amp; JavaScript</span>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-name">JUnit &amp; Postman</span>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="skill-group-label">Cloud &amp; Infrastructure</div>
+        <ul class="skill-list">
+          <li class="skill-item">
+            <span class="skill-name">AWS (EC2, S3, Lambda, IAM)</span>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-name">Azure &amp; Microsoft 365</span>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-name">Active Directory &amp; SCCM</span>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-name">Docker &amp; Kubernetes</span>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-name">CI/CD &amp; Jenkins</span>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="72"></div></div>
+          </li>
+          <li class="skill-item">
+            <span class="skill-name">CNN &amp; ML Engineering</span>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">Professional history</div>
+    <h2 class="section-heading">Experience</h2>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-period">Dec 2025 – Present</div>
+        <div class="exp-org">Aloft Technologies LLC<br>Remote</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Software Developer Intern</div>
+        <ul class="exp-bullets">
+          <li>Contributing to software development initiatives in support of IT consulting services and organizational goals.</li>
+          <li>Assisting in design, development, and maintenance of applications under senior developer guidance.</li>
+          <li>Collaborating with cross-functional teams to translate requirements into technical solutions.</li>
+          <li>Writing, testing, and debugging code to improve system functionality and performance in a professional remote environment.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="project-grid">
-
-      <article class="project-card accent-pink reveal">
-        <img class="project-img" src="images/projects/grocery.jpg" alt="Grocery Store Management System">
-        <div class="project-body">
-          <h3>Grocery Store Management System</h3>
-          <p class="meta">Flask · React · Oracle SQL · JWT · AWS EC2</p>
-          <p>
-            Full-stack inventory, orders, and user management system with role-based access control
-            and secure REST APIs.
-          </p>
-          <div class="actions">
-            <a class="btn small" href="https://github.com/Meghanaaa2002" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-github"></i> GitHub
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card accent-blue reveal">
-        <img class="project-img" src="images/projects/asl.jpg" alt="Sign Language Recognition System">
-        <div class="project-body">
-          <h3>Sign Language Recognition System</h3>
-          <p class="meta">CNN · Flask · OpenCV</p>
-          <p>
-            Real-time ASL gesture recognition using CNNs, achieving 92% accuracy and improving accessibility.
-          </p>
-          <div class="actions">
-            <a class="btn small" href="https://github.com/Meghanaaa2002" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-github"></i> GitHub
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card accent-green reveal">
-        <img class="project-img" src="images/projects/plant.jpg" alt="Plant Disease Detection System">
-        <div class="project-body">
-          <h3>Plant Disease Detection System</h3>
-          <p class="meta">CNN · Flask · AWS S3 · Lambda</p>
-          <p>
-            Leaf disease detection with 94% validation accuracy and a serverless inference workflow.
-          </p>
-          <div class="actions">
-            <a class="btn small" href="https://github.com/Meghanaaa2002" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-github"></i> GitHub
-            </a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section alt">
-    <div class="section-head">
-      <h2>Skill Summary</h2>
-      <p>Switch modes to highlight the most relevant skills.</p>
-    </div>
-
-    <ul class="chips mode-block reveal" data-mode="fullstack">
-      <li class="chip pink">Java</li>
-      <li class="chip indigo">Spring Boot</li>
-      <li class="chip cyan">React</li>
-      <li class="chip purple">JavaScript</li>
-      <li class="chip gray">REST APIs</li>
-      <li class="chip gray">SQL</li>
-      <li class="chip orange">Postman</li>
-      <li class="chip orange">JUnit</li>
-    </ul>
-
-    <ul class="chips mode-block hidden reveal" data-mode="cloud">
-      <li class="chip teal">AWS (EC2, S3, Lambda, IAM)</li>
-      <li class="chip sky">Azure</li>
-      <li class="chip green">Docker</li>
-      <li class="chip green">Kubernetes</li>
-      <li class="chip indigo">CI/CD</li>
-      <li class="chip gray">Jenkins</li>
-      <li class="chip gray">Monitoring</li>
-      <li class="chip gray">Security (IAM)</li>
-    </ul>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section">
-    <div class="section-head">
-      <h2>Experience</h2>
-      <p>Impact-focused highlights.</p>
-    </div>
-
-    <div class="two-col">
-      <div class="card reveal">
-        <h3>Graduate Assistant — Graduate School</h3>
-        <p class="meta">University of Cincinnati · Dec 2024 – Aug 2025</p>
-        <ul class="bullets">
-          <li>Engineered and supported enterprise IT infrastructure for the Provost Office and Graduate College, managing Windows/macOS environments, Active Directory, Windows Server, SCCM imaging, and Microsoft 365.</li>
-          <li>Deployed secure Windows images and provisioned endpoints at scale; troubleshot distributed systems across Teams, Zoom, networking (TCP/IP), and hybrid collaboration platforms.</li>
-          <li>Reduced recurring ServiceNow incidents by 30% through root cause analysis and built a Python-based predictive asset management model that decreased hardware failures by 90%.</li>
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-period">Dec 2024 – Aug 2025</div>
+        <div class="exp-org">University of Cincinnati<br>Graduate School</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Graduate Assistant — IT Infrastructure</div>
+        <ul class="exp-bullets">
+          <li>Engineered enterprise IT infrastructure for the Provost Office, managing Windows/macOS, Active Directory, Windows Server, SCCM imaging, and Microsoft 365 environments.</li>
+          <li>Built a Python-based predictive asset management model that <span class="highlight-stat">decreased hardware failures by 90%</span> through root cause analysis and intelligent automation.</li>
+          <li>Reduced recurring ServiceNow incidents by <span class="highlight-stat">30%</span> through systematic root cause analysis and process improvement.</li>
+          <li>Deployed secure Windows images and provisioned endpoints at scale; troubleshot distributed systems across Teams, Zoom, and hybrid collaboration platforms.</li>
           <li>Managed user authentication, server configuration, data backup, and endpoint security to strengthen infrastructure reliability and compliance.</li>
         </ul>
       </div>
-
-      <div class="card reveal">
-        <h3>Software Developer Intern</h3>
-        <p class="meta">Aloft Technologies LLC · Dec 2025 – Present</p>
-        <ul class="bullets">
-          <li>Contributing to software development initiatives in support of IT consulting services and organizational goals.</li>
-          <li>Assisting in the design, development, and maintenance of applications under the guidance of senior developers.</li>
-          <li>Collaborating with cross-functional teams to understand requirements and implement technical solutions.</li>
-          <li>Writing, testing, and debugging code to improve system functionality and performance.</li>
-          <li>Gaining hands-on experience with real-world development workflows in a professional remote environment.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education" class="section alt">
-    <div class="section-head">
-      <h2>Education</h2>
-      <p>Academic background.</p>
     </div>
 
-    <div class="edu-timeline">
-      <div class="edu-item accent-blue reveal">
-        <div class="edu-logo">
-          <img src="images/universities/uc.png" alt="University of Cincinnati Logo">
-        </div>
-        <div class="edu-card">
-          <div class="edu-top">
-            <h3>University of Cincinnati</h3>
-            <span class="badge badge-blue">Expected 2026</span>
-          </div>
-          <p class="edu-meta">Master of Engineering, Computer Science · Aug 2024 – Apr 2026</p>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-label">Academic background</div>
+    <h2 class="section-heading">Education</h2>
+    <div class="edu-grid">
+
+      <div class="edu-card reveal">
+        <div class="edu-badge">🎓</div>
+        <div>
+          <div class="edu-degree">Master of Engineering<br>Computer Science</div>
+          <div class="edu-school">University of Cincinnati</div>
+          <div class="edu-period">Aug 2024 – Expected Apr 2026</div>
         </div>
       </div>
 
-      <div class="edu-item accent-pink reveal">
-        <div class="edu-logo">
-          <img src="images/universities/jntu.png" alt="JNTU Logo">
-        </div>
-        <div class="edu-card">
-          <div class="edu-top">
-            <h3>Jawaharlal Nehru Technological University</h3>
-            <span class="badge badge-pink">Graduated</span>
-          </div>
-          <p class="edu-meta">Bachelor of Technology, Computer Science Engineering · Dec 2020 – Jun 2024</p>
+      <div class="edu-card reveal">
+        <div class="edu-badge">🏫</div>
+        <div>
+          <div class="edu-degree">Bachelor of Technology<br>Computer Science Engineering</div>
+          <div class="edu-school">Jawaharlal Nehru Technological University</div>
+          <div class="edu-period">Dec 2020 – Jun 2024</div>
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="section-head">
-      <h2>Contact</h2>
-      <p>Let’s connect.</p>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <h2 class="contact-heading">Let's build something great together.</h2>
+        <p class="contact-sub">Open to full-time SDE, backend, cloud, and ML engineering roles. Currently pursuing my Master's at the University of Cincinnati — graduating April 2026.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:g.meghanaa31@gmail.com" class="contact-link">
+          <span class="contact-icon">✉</span>
+          g.meghanaa31@gmail.com
+        </a>
+        <a href="https://github.com/Meghanaaa2002" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-icon">⌥</span>
+          github.com/Meghanaaa2002
+        </a>
+        <a href="https://linkedin.com/in/meghana-guddanti" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-icon">in</span>
+          linkedin.com/in/meghana-guddanti
+        </a>
+        <a href="meghanaguddanti_resume.pdf" target="_blank" class="contact-link">
+          <span class="contact-icon">↓</span>
+          Download Resume (PDF)
+        </a>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="card contact reveal">
-      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:g.meghanaa31@gmail.com">g.meghanaa31@gmail.com</a></p>
-      <p><i class="fa-brands fa-github"></i> <a href="https://github.com/meghanaguddanti" target="_blank" rel="noopener noreferrer">github.com/Meghanaaa2002</a></p>
-      <p><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/meghana-guddanti" target="_blank" rel="noopener noreferrer">linkedin.com/in/meghana-guddanti</a></p>
-    </div>
-  </section>
+<!-- FOOTER -->
+<footer>
+  © 2026 Meghana Guddanti &nbsp;·&nbsp; Software Development Engineer
+</footer>
 
-  <footer class="footer">
-    <p>© 2026 Meghana Guddanti</p>
-  </footer>
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => revealObserver.observe(el));
 
-  <script src="js/main.js"></script>
+  // Animate skill bars on scroll
+  const bars = document.querySelectorAll('.skill-bar-fill');
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        el.style.width = el.getAttribute('data-width') + '%';
+        barObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.2 });
+  bars.forEach(bar => barObserver.observe(bar));
+</script>
+
 </body>
 </html>
