@@ -216,6 +216,7 @@
   /* PROJECTS */
   #projects { background: white; }
   .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  @media (min-width: 901px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
   .project-card {
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -233,6 +234,7 @@
   .thumb-grocery { background: linear-gradient(135deg, #e8f0ec 0%, #c8ddd1 100%); }
   .thumb-asl     { background: linear-gradient(135deg, #f0ece8 0%, #ddd1c4 100%); }
   .thumb-plant   { background: linear-gradient(135deg, #eaf0e4 0%, #c8ddb8 100%); }
+  .thumb-health  { background: linear-gradient(135deg, #e8eef8 0%, #b8cce8 100%); }
   .project-icon { font-size: 2.8rem; }
   .project-body { padding: 1.5rem; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.8rem; }
@@ -542,7 +544,7 @@
         <div class="stat-label">Fewer support incidents</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">3+</div>
+        <div class="stat-num">4+</div>
         <div class="stat-label">Production-deployed projects</div>
       </div>
     </div>
@@ -605,6 +607,25 @@
           <div class="project-name">Plant Disease Detection System</div>
           <p class="project-desc">Leaf disease detection with <span class="highlight-stat">94% validation accuracy</span> and serverless inference via AWS Lambda and S3.</p>
           <a href="https://github.com/meghanaguddanti/DISEASE_DETECTION_OF_PLANT_LEAF_USING_CNN" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-thumb thumb-health">
+          <div class="project-icon">🏥</div>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="project-tag">Java / Spring Boot</span>
+            <span class="project-tag">React</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">JWT</span>
+            <span class="project-tag">Docker</span>
+            <span class="project-tag">Azure</span>
+          </div>
+          <div class="project-name">Healthcare Appointment Management System</div>
+          <p class="project-desc">Full-stack appointment platform with patient registration, doctor listings, JWT-secured booking, and admin dashboards — containerized with Docker and deployed on Azure.</p>
+          <a href="https://github.com/meghanaguddanti" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
         </div>
       </div>
 
